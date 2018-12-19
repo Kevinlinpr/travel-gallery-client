@@ -20,6 +20,9 @@ const styles = theme => ({
         bottom: theme.spacing.unit * 2,
         right: theme.spacing.unit * 3,
     },
+    iconStyle:{
+        Color: "red"
+    }
 });
 
 const actions = [
@@ -69,12 +72,12 @@ class SpeedDialTooltipOpen extends React.Component {
 
         return (
             <div className={classes.root}>
-                <Button onClick={this.handleVisibility}>Toggle Speed Dial</Button>
+                {/*<Button onClick={this.handleVisibility}>Toggle Speed Dial</Button>*/}
                 <SpeedDial
                     ariaLabel="SpeedDial tooltip example"
                     className={classes.speedDial}
                     hidden={hidden}
-                    icon={<SpeedDialIcon />}
+                    icon={<SpeedDialIcon className={classes.iconStyle}/>}
                     onBlur={this.handleClose}
                     onClick={this.handleClick}
                     onClose={this.handleClose}
@@ -82,6 +85,7 @@ class SpeedDialTooltipOpen extends React.Component {
                     onMouseEnter={this.handleOpen}
                     onMouseLeave={this.handleClose}
                     open={open}
+                    classes={classes.iconStyle}
                 >
                     {actions.map(action => (
                         <SpeedDialAction
@@ -90,6 +94,7 @@ class SpeedDialTooltipOpen extends React.Component {
                             tooltipTitle={action.name}
                             tooltipOpen
                             onClick={this.handleClick}
+                            classes={classes.iconStyle}
                         />
                     ))}
                 </SpeedDial>

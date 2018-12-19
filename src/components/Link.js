@@ -8,19 +8,20 @@ import GalleryIcon from '@material-ui/icons/Map';
 import AboutIcon from '@material-ui/icons/Sms';
 import {VisibilityFilters} from "../actions";
 import { NavLink } from 'react-router-dom'
-const Link = ({filter, children , onClick }) => (
-    <NavLink
-        to={filter === VisibilityFilters.HOME ? '/' : `/${filter}`}
-    >
-        <div onClick={onClick}>
-            <ListItem button>
-                <ListItemIcon><ListCustomItemIcon filter={filter}/></ListItemIcon>
-                <ListItemText primary={filter} />
-            </ListItem>
+function Link(props){
+    return(
+        <div onClick={props.onClick}>
+            <NavLink
+                to={props.filter === VisibilityFilters.HOME ? '/' : `/${props.filter}`}
+            >
+                <ListItem button>
+                    <ListItemIcon><ListCustomItemIcon filter={props.filter}/></ListItemIcon>
+                    <ListItemText primary={props.filter}/>
+                </ListItem>
+            </NavLink>
         </div>
-    </NavLink>
-
-);
+    )
+}
 const ListCustomItemIcon = (props) =>{
     return(
         <div>
@@ -34,4 +35,4 @@ const ListCustomItemIcon = (props) =>{
     )
 };
 
-export default Link
+export default Link;

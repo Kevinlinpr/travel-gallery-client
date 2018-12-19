@@ -1,20 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import Content from '../components/Content';
-import {setVisibilityContent, VisibilityFilters} from '../actions'
-import visibilityContent from '../reducers/visibilityContent'
+import { VisibilityFilters } from '../actions'
 import GalleryControlledExpansionPanels from '../components/GalleryControlledExpansionPanels';
 import AboutContent from '../components/AboutContent';
-import HomeContent from '../components/HomeContent';
+import GalleryContent from '../components/GalleryContent';
 const getVisibleContent = (content) =>{
     console.log("update:"+content);
     switch (content) {
         case VisibilityFilters.HOME:
             return content;
         case VisibilityFilters.GALLERY:
-            return <GalleryControlledExpansionPanels/>;
+            return <GalleryContent/>;
         case VisibilityFilters.ABOUT:
-            return <AboutContent/>;
+            return content;
         default:
             return content;
     }
