@@ -9,7 +9,7 @@ import AboutIcon from '@material-ui/icons/Sms';
 import {VisibilityFilters} from "../actions";
 
 const Content = ({filter, children}) => (
-    <ListItem button>
+    <ListItem>
         <ListItemIcon><ListCustomItemIcon filter={filter}/></ListItemIcon>
         <ListItemText primary={filter} />
     </ListItem>
