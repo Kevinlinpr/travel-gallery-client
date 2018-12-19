@@ -8,13 +8,11 @@ import GalleryIcon from '@material-ui/icons/Map';
 import AboutIcon from '@material-ui/icons/Sms';
 import {VisibilityFilters} from "../actions";
 
-const Link = ({filter, children , onClick }) => (
-    <div onClick={onClick}>
-        <ListItem button>
-            <ListItemIcon><ListCustomItemIcon filter={filter}/></ListItemIcon>
-            <ListItemText primary={filter} />
-        </ListItem>
-    </div>
+const Content = ({filter, children}) => (
+    <ListItem button>
+        <ListItemIcon><ListCustomItemIcon filter={filter}/></ListItemIcon>
+        <ListItemText primary={filter} />
+    </ListItem>
 );
 const ListCustomItemIcon = (props) =>{
     return(
@@ -29,4 +27,4 @@ const ListCustomItemIcon = (props) =>{
     )
 };
 
-export default Link
+export default Content

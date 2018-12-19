@@ -39,9 +39,9 @@ class TemporaryDrawer extends React.Component {
         const fullList = (
             <div className={classes.fullList}>
                 <List>
-                    <FilterLink filter={VisibilityFilters.HOME}>Home</FilterLink>
-                    <FilterLink filter={VisibilityFilters.GALLERY}>Gallery</FilterLink>
-                    <FilterLink filter={VisibilityFilters.ABOUT}>About</FilterLink>
+                    <FilterLink filter={VisibilityFilters.HOME}/>
+                    <FilterLink filter={VisibilityFilters.GALLERY}/>
+                    <FilterLink filter={VisibilityFilters.ABOUT}/>
                 </List>
             </div>
         );
