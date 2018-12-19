@@ -7,14 +7,19 @@ import HomeIcon from '@material-ui/icons/Home';
 import GalleryIcon from '@material-ui/icons/Map';
 import AboutIcon from '@material-ui/icons/Sms';
 import {VisibilityFilters} from "../actions";
-
+import { NavLink } from 'react-router-dom'
 const Link = ({filter, children , onClick }) => (
-    <div onClick={onClick}>
-        <ListItem button>
-            <ListItemIcon><ListCustomItemIcon filter={filter}/></ListItemIcon>
-            <ListItemText primary={filter} />
-        </ListItem>
-    </div>
+    <NavLink
+        to={filter === VisibilityFilters.HOME ? '/' : `/${filter}`}
+    >
+        <div onClick={onClick}>
+            <ListItem button>
+                <ListItemIcon><ListCustomItemIcon filter={filter}/></ListItemIcon>
+                <ListItemText primary={filter} />
+            </ListItem>
+        </div>
+    </NavLink>
+
 );
 const ListCustomItemIcon = (props) =>{
     return(
