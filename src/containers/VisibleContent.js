@@ -19,8 +19,8 @@ const getVisibleContent = (content) =>{
             return content;
     }
 };
-const mapStateToProps = (state) => ({
-    filter: getVisibleContent(state.visibilityContent)
+const mapStateToProps = (state,ownProps) => ({
+    filter: getVisibleContent(ownProps.filter)
 });
 
 export default connect(

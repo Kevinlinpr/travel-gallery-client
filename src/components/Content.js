@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -8,7 +7,7 @@ import GalleryIcon from '@material-ui/icons/Map';
 import AboutIcon from '@material-ui/icons/Sms';
 import {VisibilityFilters} from "../actions";
 
-const Content = ({filter, children}) => (
+const Content = ({filter}) => (
     <ListItem>
         <ListItemIcon><ListCustomItemIcon filter={filter}/></ListItemIcon>
         <ListItemText primary={filter} />
