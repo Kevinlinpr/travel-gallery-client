@@ -2,6 +2,8 @@ import React from 'react';
 import SimpleAppBar from './SimpleAppBar';
 import GalleryControlledExpansionPanels from './GalleryControlledExpansionPanels';
 import { BrowserRouter as Router, Route , Link } from 'react-router-dom'
+import VisibleContent from "../containers/VisibleContent";
+import {VisibilityFilters} from "../actions";
 const App = () => (
     <div>
         <SimpleAppBar/>
@@ -24,6 +26,7 @@ const App = () => (
                 {/*<Route path={'/about'} component={About}/>*/}
             {/*</div>*/}
         {/*</Router>*/}
+        <VisibleContent filter={VisibilityFilters.HOME}/>
     </div>
 );
 function Home() {
