@@ -6,7 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import {connect} from 'react-redux';
-import {openMenu,closeMenu} from '../actions';
+import {openMenu,closeMenu,navigationsSelected} from '../actions';
 import {bindActionCreators} from 'redux';
 const styles = {
     list: {
@@ -21,7 +21,7 @@ class Navigations extends React.Component {
     createNavigation(){
         return this.props.navigations.map((selected)=>{
             return(
-                <ListItem button key={selected.id}>
+                <ListItem button key={selected.id} onClick={()=>{this.props.navigationsSelected(selected.name)}}>
                     <ListItemIcon>{selected.icon}</ListItemIcon>
                     <ListItemText primary={selected.name} />
                 </ListItem>
@@ -57,10 +57,10 @@ class Navigations extends React.Component {
 function mapStateToProps(state) {
     return{
         navigations: state.navigations,
-        menuActive: state.menuActive
+        menuActive: state.menuActive,
     }
 }
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({openMenu: openMenu,closeMenu:closeMenu},dispatch);
+    return bindActionCreators({openMenu: openMenu,closeMenu:closeMenu,navigationsSelected:navigationsSelected},dispatch);
 }
 export default connect(mapStateToProps,matchDispatchToProps)(withStyles(styles)(Navigations));
