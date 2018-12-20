@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import {connect} from 'react-redux';
+import {bindActionCreators} from "redux";
+import {closeMenu, openMenu} from "../actions";
 const styles = {
     root: {
         flexGrow: 1,
@@ -26,9 +28,15 @@ class MenuBar extends Component {
             <div className={classes.root}>
                 <AppBar position="static">
                     <Toolbar>
-                        <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                            <MenuIcon />
-                        </IconButton>
+                        <div onClick={()=>{this.props.openMenu()}}>
+                            <IconButton
+                                className={classes.menuButton}
+                                color="inherit"
+                                aria-label="Menu"
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                        </div>
                         <Typography variant="h6" color="inherit" className={classes.grow}>
                             TravelGallery
                         </Typography>
@@ -44,5 +52,7 @@ function mapStateToProps(state) {
         menuActive: state.menuActive
     }
 }
-
-export default connect(mapStateToProps)(withStyles(styles)(MenuBar));
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({openMenu: openMenu,closeMenu:closeMenu},dispatch);
+}
+export default connect(mapStateToProps,matchDispatchToProps)(withStyles(styles)(MenuBar));
