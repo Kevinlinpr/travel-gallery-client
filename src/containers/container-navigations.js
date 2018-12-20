@@ -1,7 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -19,15 +18,6 @@ const styles = {
 };
 
 class Navigations extends React.Component {
-    state = {
-        top: false
-    };
-
-    toggleDrawer = (side, open) => () => {
-        this.setState({
-            [side]: open,
-        });
-    };
     createNavigation(){
         return this.props.navigations.map((selected)=>{
             return(
@@ -54,8 +44,8 @@ class Navigations extends React.Component {
                     <div
                         tabIndex={0}
                         role="button"
-                        onClick={this.toggleDrawer('top', false)}
-                        onKeyDown={this.toggleDrawer('top', false)}
+                        onClick={()=>{this.props.closeMenu()}}
+                        onKeyDown={()=>{this.props.closeMenu()}}
                     >
                         {fullList}
                     </div>
