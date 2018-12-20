@@ -1,17 +1,29 @@
-export const setVisibilityContent = (filter) => {
-    return{
-        type: 'SET_VISIBILITY_CONTENT',
-        filter
-    }
-};
-export const setVisibilityFilter = (filter) => {
+export const openMenu = () =>{
     return {
-        type: 'SET_VISIBILITY_FILTER',
-        filter
+        type: MenuType.CLOSE_MENU,
+        payload: true
     }
 };
-export const VisibilityFilters = {
-    HOME: 'HOME',
-    GALLERY: 'GALLERY',
-    ABOUT: 'ABOUT'
+export const closeMenu = () =>{
+    return {
+        type: MenuType.OPEN_MENU,
+        payload: false
+    }
 };
+
+export const MenuType = {
+    OPEN_MENU:'OPEN_MENU',
+    CLOSE_MENU:'CLOSE_MENU'
+};
+
+export const navigationsSelected = (selected) =>{
+    return {
+        type: NavigationsType.NAVIGATIONS_SELECTED,
+        payload: selected
+    }
+};
+
+export const NavigationsType = {
+    NAVIGATIONS_SELECTED:'NAVIGATIONS_SELECTED'
+};
+
