@@ -1,14 +1,12 @@
-import React from 'react';
-import SimpleAppBar from './SimpleAppBar';
-import VisibleContent from "../containers/VisibleContent";
-import {VisibilityFilters} from "../actions";
-import ProcessDialog from './ProcessDialog'
-const App = ({ match: { params } }) => (
-    <div>
-        <SimpleAppBar/>
-        <VisibleContent filter={params.filter || VisibilityFilters.HOME}/>
-        <ProcessDialog/>
-    </div>
-);
-
+import React, { Component } from 'react';
+import MenuBar from '../containers/container-menu';
+class App extends Component{
+    render(){
+        return(
+            <div>
+                <MenuBar/>
+            </div>
+        )
+    }
+}
 export default App;

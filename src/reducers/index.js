@@ -1,7 +1,9 @@
-import { combineReducers } from 'redux'
-import visibilityFilter from './visibilityFilter'
-import visibilityContent from './visibilityContent'
-export default combineReducers({
-    visibilityFilter,
-    visibilityContent
-})
+import {combineReducers} from 'redux';
+import NavigationsReducer from './reducer-navigations';
+import MenuActiveReducer from './reducer-menu';
+const allReducers = combineReducers({
+    navigations:NavigationsReducer,
+    menuActive:MenuActiveReducer
+});
+
+export default allReducers;
