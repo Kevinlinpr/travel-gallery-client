@@ -18,6 +18,13 @@ const styles = {
 };
 
 class Navigations extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={
+            active:this.props.menuActive.active
+        };
+    }
+
     createNavigation(){
         return this.props.navigations.map((selected)=>{
             return(
@@ -38,18 +45,32 @@ class Navigations extends React.Component {
                 </List>
             </div>
         );
+
         return (
             <div>
-                <Drawer anchor="top" open={this.props.menuActive.active} onClose={()=>{this.props.closeMenu()}}>
-                    <div
-                        tabIndex={0}
-                        role="button"
-                        onClick={()=>{this.props.closeMenu()}}
-                        onKeyDown={()=>{this.props.closeMenu()}}
-                    >
-                        {fullList}
-                    </div>
-                </Drawer>
+                {
+                    typeof this.props.menuActive.active === "boolean"?
+                        <Drawer anchor="top" open={this.props.menuActive.active} onClose={()=>{this.props.closeMenu()}}>
+                            <div
+                                tabIndex={0}
+                                role="button"
+                                onClick={()=>{this.props.closeMenu()}}
+                                onKeyDown={()=>{this.props.closeMenu()}}
+                            >
+                                {fullList}
+                            </div>
+                        </Drawer>:
+                        <Drawer anchor="top" onClose={()=>{this.props.closeMenu()}}>
+                            <div
+                                tabIndex={0}
+                                role="button"
+                                onClick={()=>{this.props.closeMenu()}}
+                                onKeyDown={()=>{this.props.closeMenu()}}
+                            >
+                                {fullList}
+                            </div>
+                        </Drawer>
+                }
             </div>
         );
     }

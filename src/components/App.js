@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MenuBar from '../containers/container-menu';
 import Navigations from '../containers/container-navigations';
-import Content from '../containers/container-content';
+//import Content from '../containers/container-content';
 import { Route, Switch } from 'react-router' // react-router v4
 import { ConnectedRouter } from 'connected-react-router'
 class App extends Component{
