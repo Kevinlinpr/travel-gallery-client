@@ -28,14 +28,16 @@ class Navigations extends React.Component {
     createNavigation(){
         return this.props.navigations.map((selected)=>{
             return(
-                <ListItem button key={selected.id} onClick={()=>{this.props.navigationsSelected(selected.name)}}>
+                <ListItem button key={selected.id} onClick={()=>{this.props.navigationsSelected(selected.router)}}>
                     <ListItemIcon>{selected.icon}</ListItemIcon>
                     <ListItemText primary={selected.name} />
                 </ListItem>
             )
         })
     }
-
+    navigate(){
+            console.log(this.props.navigationSelected.content)
+    }
     render() {
         const { classes } = this.props;
         const fullList = (
@@ -54,7 +56,9 @@ class Navigations extends React.Component {
                             <div
                                 tabIndex={0}
                                 role="button"
-                                onClick={()=>{this.props.closeMenu()}}
+                                onClick={()=>{
+                                    this.props.closeMenu();
+                                }}
                                 onKeyDown={()=>{this.props.closeMenu()}}
                             >
                                 {fullList}
@@ -64,7 +68,9 @@ class Navigations extends React.Component {
                             <div
                                 tabIndex={0}
                                 role="button"
-                                onClick={()=>{this.props.closeMenu()}}
+                                onClick={()=>{
+                                    this.props.closeMenu();
+                                }}
                                 onKeyDown={()=>{this.props.closeMenu()}}
                             >
                                 {fullList}
@@ -79,6 +85,7 @@ function mapStateToProps(state) {
     return{
         navigations: state.navigations,
         menuActive: state.menuActive,
+        navigationSelected: state.navigationSelected
     }
 }
 function matchDispatchToProps(dispatch) {

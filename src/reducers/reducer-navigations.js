@@ -12,17 +12,20 @@ export default function () {
         {
             id:1,
             name:ContentType.Home,
-            icon:<HomeIcon/>
+            icon:<HomeIcon/>,
+            router: ''
         },
         {
             id:2,
             name:ContentType.Gallery,
-            icon:<GalleryIcon/>
+            icon:<GalleryIcon/>,
+            router: 'gallery'
         },
         {
             id:3,
             name:ContentType.About,
-            icon:<AboutIcon/>
+            icon:<AboutIcon/>,
+            router: 'about'
         }
     ]
 }
