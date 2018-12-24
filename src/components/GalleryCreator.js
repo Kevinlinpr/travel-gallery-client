@@ -50,65 +50,75 @@ class GalleryCreator extends React.Component {
                 {
                     this.state.open?
                         <div></div>:
-                        <Button variant="outlined" color="primary" className={classes.button} onClick={this.handleClickOpen}>
+                        <Button variant="outlined" color="primary" className={classes.button} onClick={this.handleClickOpen}
+                                disableTouchRipple={true}>
                             创建新路线
                         </Button>
                 }
-                <Dialog
-                    open={this.state.open}
-                    TransitionComponent={Transition}
-                    keepMounted
-                    onClose={this.handleClose}
-                    aria-labelledby="alert-dialog-slide-title"
-                    aria-describedby="alert-dialog-slide-description"
-                >
-                    {
-                        this.state.agree?
-                            <DialogTitle id="alert-dialog-slide-title">
-                                请填写路线名称
-                            </DialogTitle>:
-                            <DialogTitle id="alert-dialog-slide-title">
-                                是否创建新路线？
-                            </DialogTitle>
-                    }
-                    <DialogContent>
-                        {
-                            this.state.agree?
-                                <TextField
-                                    id="outlined-dense"
-                                    label="路线名称"
-                                    className={classes.dense}
-                                    margin="dense"
-                                    variant="outlined"
-                                />:
-                                <DialogContentText id="alert-dialog-slide-description">
-                                    创建新路线，上传照片自动生成画廊并分享您的旅游风景！
-                                </DialogContentText>
-                        }
-                    </DialogContent>
-                    <DialogActions>
-                        {
-                            this.state.agree?
-                                <div>
-                                    <Button onClick={this.handleCancel} color="primary">
-                                        取消
+                {
+                    this.state.agree?
+                        <div>
+                            <Dialog
+                                open={this.state.open}
+                                TransitionComponent={Transition}
+                                keepMounted
+                                onClose={this.handleClose}
+                                aria-labelledby="alert-dialog-slide-title"
+                                aria-describedby="alert-dialog-slide-description"
+                            >
+                                <DialogTitle id="alert-dialog-slide-title">
+                                    请填写路线名称
+                                </DialogTitle>
+                                <DialogContent>
+                                    <TextField
+                                        id="outlined-dense"
+                                        label="路线名称"
+                                        className={classes.dense}
+                                        margin="dense"
+                                        variant="outlined"
+                                        onChange={()=>{
+                                            this.handleInput()}
+                                        }
+                                    />
+                                </DialogContent>
+                                <DialogActions>
+                                    <Button onClick={this.handleCancel} color="primary" disableTouchRipple={true}>
+                                        上一步
                                     </Button>
-                                    <Button onClick={this.handleConfirm} color="primary">
-                                        确认
-                                    </Button>
-                                </div>:
-                                <div>
-                                    <Button onClick={this.handleClose} color="primary">
-                                        下次吧
-                                    </Button>
-                                    <Button onClick={this.handleClickAgree} color="primary">
+                                    <Button onClick={this.handleConfirm} color="primary" disableTouchRipple={true}>
                                         立即创建
                                     </Button>
-                                </div>
-                        }
-
-                    </DialogActions>
-                </Dialog>
+                                </DialogActions>
+                            </Dialog>
+                        </div>:
+                        <div>
+                            <Dialog
+                                open={this.state.open}
+                                TransitionComponent={Transition}
+                                keepMounted
+                                onClose={this.handleClose}
+                                aria-labelledby="alert-dialog-slide-title"
+                                aria-describedby="alert-dialog-slide-description"
+                            >
+                                <DialogTitle id="alert-dialog-slide-title">
+                                    是否创建新路线？
+                                </DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-slide-description">
+                                        创建新路线，上传照片自动生成画廊并分享您的旅游风景！
+                                    </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                    <Button onClick={this.handleClose} color="primary" disableTouchRipple={true}>
+                                        否
+                                    </Button>
+                                    <Button onClick={this.handleClickAgree} color="primary" disableTouchRipple={true}>
+                                        是
+                                    </Button>
+                                </DialogActions>
+                            </Dialog>
+                        </div>
+                }
             </div>
         );
     }

@@ -27,7 +27,8 @@ class GalleryList extends Component {
         return (
             <List className={classes.root}>
                 <ListItem button={true} selected={this.state.selectedIndex === 0}
-                          onClick={event=>this.handleListItemClick(event,0)}>
+                          onClick={event=>this.handleListItemClick(event,0)}
+                          disableTouchRipple={true}>
                     <ListItemText primary="Photos" secondary="Jan 9, 2014" />
                     {
                         this.state.selectedIndex === 0?
@@ -37,7 +38,8 @@ class GalleryList extends Component {
                     }
                 </ListItem>
                 <ListItem button={true} selected={this.state.selectedIndex === 1}
-                          onClick={event=>this.handleListItemClick(event,1)}>
+                          onClick={event=>this.handleListItemClick(event,1)}
+                          disableTouchRipple={true}>
                     <ListItemText primary="Work" secondary="Jan 7, 2014" />
                     {
                         this.state.selectedIndex === 1?
@@ -47,7 +49,8 @@ class GalleryList extends Component {
                     }
                 </ListItem>
                 <ListItem button={true} selected={this.state.selectedIndex === 2}
-                          onClick={event=>this.handleListItemClick(event,2)}>
+                          onClick={event=>this.handleListItemClick(event,2)}
+                          disableTouchRipple={true}>
                     <ListItemText primary="Vacation" secondary="July 20, 2014" />
                     {
                         this.state.selectedIndex === 2?
