@@ -1,21 +1,19 @@
 import React,{Component} from 'react';
-import {connect} from 'react-redux';
 import { Route, Switch } from 'react-router' // react-router v4
+import Home from '../components/Home';
+import Gallery from '../components/Gallery';
+import About from '../components/About';
+import GalleryMap from "../components/GalleryMap";
 class Content extends Component{
     render(){
         return(
             <Switch>
-                <Route exact path={"/"} render={()=><h1>Home</h1>}/>
-                <Route exact path={"/gallery"} render={()=><h1>Gallery</h1>}/>
-                <Route exact path={"/about"} render={()=><h1>about</h1>}/>
+                <Route exact path={"/"} render={()=><Home/>}/>
+                <Route exact path={"/gallery"} render={()=><GalleryMap/>}/>
+                <Route exact path={"/about"} render={()=><About/>}/>
                 <Route render={() => (<h1>Miss</h1>)} />
             </Switch>
         )
     }
 }
-function mapStateToProps(state) {
-    return{
-        navigationSelected: state.navigationSelected
-    }
-}
-export default connect(mapStateToProps)(Content);
+export default (Content);

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-
+import GalleryMap from './GalleryMap';
 class Gallery extends Component{
     render(){
         return(
-            <h1>Gallery</h1>
+            <GalleryMap/>
         )
     }
 }

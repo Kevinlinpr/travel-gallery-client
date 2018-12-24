@@ -9,6 +9,7 @@
     "connected-react-router": "^6.0.0",
     "history": "^4.7.2",
     "react": "^16.6.3",
+    "react-amap": "^1.2.7",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
