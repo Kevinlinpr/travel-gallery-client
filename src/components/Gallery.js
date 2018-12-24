@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import GalleryList from './GalleryList';
+import GalleryOperator from './GalleryOperator'
 class Gallery extends Component{
     render(){
         return(
-            <GalleryList/>
+            <div>
+                <GalleryOperator/>
+            </div>
         )
     }
 }
