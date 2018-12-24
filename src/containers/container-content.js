@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import { Route, Switch } from 'react-router' // react-router v4
 import Home from '../components/Home';
-import Gallery from '../components/Gallery';
 import About from '../components/About';
 import GalleryMap from "../components/GalleryMap";
 class Content extends Component{
