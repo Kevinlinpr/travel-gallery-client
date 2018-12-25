@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42a4461a-e879-4cd3-ab7b-b98908d6f2d3" name="Default Changelist" comment="adding a gallery operator">
+    <list default="true" id="42a4461a-e879-4cd3-ab7b-b98908d6f2d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GalleryCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GalleryCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GalleryList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GalleryList.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -124,8 +122,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/GalleryCreator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="53" column="57" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
+            <state relative-caret-position="321">
+              <caret line="97" column="48" lean-forward="true" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -308,7 +306,7 @@
       <workItem from="1545329629915" duration="219000" />
       <workItem from="1545507570032" duration="357000" />
       <workItem from="1545508701284" duration="8156000" />
-      <workItem from="1545614362689" duration="11938000" />
+      <workItem from="1545614362689" duration="13200000" />
     </task>
     <task id="LOCAL-00001" summary="create new branch develop-ui">
       <created>1545059634614</created>
@@ -408,11 +406,25 @@
       <option name="project" value="LOCAL" />
       <updated>1545677278642</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix the GlleryCreator UI error">
+      <created>1545682144734</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1545682144734</updated>
+    </task>
+    <task id="LOCAL-00016" summary="require the text creating the new galleryName value">
+      <created>1545696054528</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1545696054528</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84844000" />
+    <option name="totallyTimeSpent" value="86106000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -475,7 +487,9 @@
     <MESSAGE value="improve simple amap component" />
     <MESSAGE value="adding a gallery list" />
     <MESSAGE value="adding a gallery operator" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding a gallery operator" />
+    <MESSAGE value="fix the GlleryCreator UI error" />
+    <MESSAGE value="require the text creating the new galleryName value" />
+    <option name="LAST_COMMIT_MESSAGE" value="require the text creating the new galleryName value" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md" />
@@ -693,8 +707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/GalleryCreator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="53" column="57" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
+        <state relative-caret-position="321">
+          <caret line="97" column="48" lean-forward="true" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

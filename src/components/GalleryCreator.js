@@ -91,7 +91,8 @@ class GalleryCreator extends React.Component {
                                     <Button onClick={this.handleCancel} color="primary" disableTouchRipple={true}>
                                         上一步
                                     </Button>
-                                    <Button onClick={this.handleConfirm} color="primary" disableTouchRipple={true}>
+                                    <Button onClick={this.handleConfirm} color="primary" disableTouchRipple={true}
+                                    disabled={this.state.galleryName===''}>
                                         立即创建
                                     </Button>
                                 </DialogActions>
