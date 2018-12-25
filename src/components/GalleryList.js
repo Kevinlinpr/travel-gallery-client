@@ -3,15 +3,16 @@ import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Button from '@material-ui/core/Button';
+import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
+import OpenOutlinedIcon from '@material-ui/icons/SearchOutlined';
+import IconButton from '@material-ui/core/IconButton';
 const styles = theme => ({
     root: {
         width: '100%',
         backgroundColor: theme.palette.background.paper,
     },
     button: {
-        width: '20%',
-        margin: 1.5*theme.spacing.unit,
+        textAlign:'right'
     }
 });
 class GalleryList extends Component {
@@ -32,9 +33,14 @@ class GalleryList extends Component {
                     <ListItemText primary="Photos" secondary="Jan 9, 2014" />
                     {
                         this.state.selectedIndex === 0?
-                            <Button variant="outlined" color="primary" className={classes.button}>
-                                查看
-                            </Button>:<div></div>
+                            <div>
+                                <IconButton aria-label="Search" className={classes.button} color={'primary'}>
+                                    <OpenOutlinedIcon />
+                                </IconButton>
+                                <IconButton aria-label="Delete" className={classes.button} color={'primary'}>
+                                    <DeleteOutlinedIcon />
+                                </IconButton>
+                            </div>:<div></div>
                     }
                 </ListItem>
                 <ListItem button={true} selected={this.state.selectedIndex === 1}
@@ -43,9 +49,14 @@ class GalleryList extends Component {
                     <ListItemText primary="Work" secondary="Jan 7, 2014" />
                     {
                         this.state.selectedIndex === 1?
-                            <Button variant="outlined" color="primary" className={classes.button}>
-                                查看
-                            </Button>:<div></div>
+                            <div>
+                                <IconButton aria-label="Search" className={classes.button} color={'primary'}>
+                                    <OpenOutlinedIcon />
+                                </IconButton>
+                                <IconButton aria-label="Delete" className={classes.button} color={'primary'}>
+                                    <DeleteOutlinedIcon />
+                                </IconButton>
+                            </div>:<div></div>
                     }
                 </ListItem>
                 <ListItem button={true} selected={this.state.selectedIndex === 2}
@@ -54,9 +65,14 @@ class GalleryList extends Component {
                     <ListItemText primary="Vacation" secondary="July 20, 2014" />
                     {
                         this.state.selectedIndex === 2?
-                            <Button variant="outlined" color="primary" className={classes.button}>
-                                查看
-                            </Button>:<div></div>
+                            <div>
+                                <IconButton aria-label="Search" className={classes.button} color={'primary'}>
+                                    <OpenOutlinedIcon />
+                                </IconButton>
+                                <IconButton aria-label="Delete" className={classes.button} color={'primary'}>
+                                    <DeleteOutlinedIcon />
+                                </IconButton>
+                            </div>:<div></div>
                     }
                 </ListItem>
             </List>
