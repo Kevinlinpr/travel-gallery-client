@@ -24,7 +24,8 @@ const styles = theme => ({
 class GalleryCreator extends React.Component {
     state = {
         open: false,
-        agree: false
+        agree: false,
+        galleryName: ''
     };
 
     handleClickOpen = () => {
@@ -40,6 +41,10 @@ class GalleryCreator extends React.Component {
         this.setState({ agree:false});
     };
     handleConfirm = () => {
+        console.log('已经创建：'+this.state.galleryName);
+        this.setState({
+            galleryName: ''
+        });
         this.setState({ open: false});
     };
 
@@ -76,9 +81,10 @@ class GalleryCreator extends React.Component {
                                         className={classes.dense}
                                         margin="dense"
                                         variant="outlined"
-                                        onChange={()=>{
-                                            this.handleInput()}
-                                        }
+                                        value={this.state.galleryName}
+                                        onChange={e=>this.setState({
+                                            galleryName: e.target.value
+                                        })}
                                     />
                                 </DialogContent>
                                 <DialogActions>
