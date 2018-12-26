@@ -42,6 +42,16 @@ class GalleryCreator extends React.Component {
     };
     handleConfirm = () => {
         console.log('已经创建：'+this.state.galleryName);
+        fetch('http://127.0.0.1:3750/create',{
+            method:'POST',
+            body:JSON.stringify({
+                name: this.state.galleryName
+            }),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        }).then(res => {return res.json()})
+            .then(res => console.log(res));
         this.setState({
             galleryName: ''
         });
