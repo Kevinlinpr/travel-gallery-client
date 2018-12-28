@@ -36,65 +36,44 @@ class GalleryList extends Component {
     };
     render(){
         const { classes } = this.props;
-        console.log(this.props.galleryList.list);
         return (
             <List className={classes.root}>
-                <ListItem button={true} selected={this.state.selectedIndex === 0}
-                          onClick={event=>this.handleListItemClick(event,0)}
-                          disableTouchRipple={true}>
-                    <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-                    {
-                        this.state.selectedIndex === 0?
-                            <div>
-                                <IconButton aria-label="Search" className={classes.button} color={'primary'}>
-                                    <OpenOutlinedIcon />
-                                </IconButton>
-                                <IconButton aria-label="Delete" className={classes.button} color={'primary'}>
-                                    <DeleteOutlinedIcon />
-                                </IconButton>
-                            </div>:<div></div>
-                    }
-                </ListItem>
-                <ListItem button={true} selected={this.state.selectedIndex === 1}
-                          onClick={event=>this.handleListItemClick(event,1)}
-                          disableTouchRipple={true}>
-                    <ListItemText primary="Work" secondary="Jan 7, 2014" />
-                    {
-                        this.state.selectedIndex === 1?
-                            <div>
-                                <IconButton aria-label="Search" className={classes.button} color={'primary'}>
-                                    <OpenOutlinedIcon />
-                                </IconButton>
-                                <IconButton aria-label="Delete" className={classes.button} color={'primary'}>
-                                    <DeleteOutlinedIcon />
-                                </IconButton>
-                            </div>:<div></div>
-                    }
-                </ListItem>
-                <ListItem button={true} selected={this.state.selectedIndex === 2}
-                          onClick={event=>this.handleListItemClick(event,2)}
-                          disableTouchRipple={true}>
-                    <ListItemText primary="Vacation" secondary="July 20, 2014" />
-                    {
-                        this.state.selectedIndex === 2?
-                            <div>
-                                <IconButton aria-label="Search" className={classes.button} color={'primary'}>
-                                    <OpenOutlinedIcon />
-                                </IconButton>
-                                <IconButton aria-label="Delete" className={classes.button} color={'primary'}>
-                                    <DeleteOutlinedIcon />
-                                </IconButton>
-                            </div>:<div></div>
-                    }
-                </ListItem>
+                {
+                    this.props.galleryList.list.length===0?
+                        <h3>暂时无数据</h3>:
+                        <div>
+                            {
+                                this.props.galleryList.list.map((item,index)=>{
+                                    return(
+                                        <ListItem button={true} selected={this.state.selectedIndex === index}
+                                                  onClick={event=>this.handleListItemClick(event,index)}
+                                                  disableTouchRipple={true}
+                                                  key={index}
+                                        >
+                                            <ListItemText primary={item.newName} secondary={item.time} />
+                                            {
+                                                this.state.selectedIndex === index?
+                                                    <div>
+                                                        <IconButton aria-label="Search" className={classes.button} color={'primary'}>
+                                                            <OpenOutlinedIcon />
+                                                        </IconButton>
+                                                        <IconButton aria-label="Delete" className={classes.button} color={'primary'}>
+                                                            <DeleteOutlinedIcon />
+                                                        </IconButton>
+                                                    </div>:<div></div>
+                                            }
+                                        </ListItem>
+                                    )
+                                })
+                            }
+                        </div>
+                }
             </List>
         );
     }
 }
 function mapStateToProps(state) {
     return{
-        navigations: state.navigations,
-        menuActive: state.menuActive,
         galleryList:state.galleryList
     }
 }

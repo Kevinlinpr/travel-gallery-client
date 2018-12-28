@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GalleryList from '../containers/container-gallery-list';
-import GalleryCreator from './GalleryCreator';
+import GalleryCreator from '../containers/container-gallery-creator';
 class GalleryOperator extends Component{
     render(){
         return(
