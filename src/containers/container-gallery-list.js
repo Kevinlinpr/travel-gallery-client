@@ -6,6 +6,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import OpenOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import IconButton from '@material-ui/core/IconButton';
+import {bindActionCreators} from "redux";
+import {getGalleryList} from "../actions";
+import {connect} from "react-redux";
 const styles = theme => ({
     root: {
         width: '100%',
@@ -18,9 +21,11 @@ const styles = theme => ({
 class GalleryList extends Component {
     constructor(props){
         super(props);
-        // fetch('http://127.0.0.1:3750/list/gallery')
-        //     .then(res => {return res.json()})
-        //     .then(res => console.log(res));
+        fetch('http://127.0.0.1:3750/list/gallery')
+            .then(res => {return res.json()})
+            .then(res => {
+                this.props.getGalleryList(res);
+            });
     }
     state = {
         selectedIndex: 0,
@@ -31,6 +36,7 @@ class GalleryList extends Component {
     };
     render(){
         const { classes } = this.props;
+        console.log(this.props.galleryList.list);
         return (
             <List className={classes.root}>
                 <ListItem button={true} selected={this.state.selectedIndex === 0}
@@ -85,5 +91,14 @@ class GalleryList extends Component {
         );
     }
 }
-
-export default withStyles(styles)(GalleryList);
+function mapStateToProps(state) {
+    return{
+        navigations: state.navigations,
+        menuActive: state.menuActive,
+        galleryList:state.galleryList
+    }
+}
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({getGalleryList: getGalleryList},dispatch);
+}
+export default connect(mapStateToProps,matchDispatchToProps)(withStyles(styles)(GalleryList));

@@ -1,4 +1,5 @@
-import { push } from 'connected-react-router';
+import {push} from 'connected-react-router';
+
 export const openMenu = () =>{
     return {
         type: MenuType.CLOSE_MENU,
@@ -21,7 +22,15 @@ export const navigationsSelected = (selected) => (dispatch) =>{
     dispatch(push('/'+selected));
 };
 
-export const NavigationsType = {
-    NAVIGATIONS_SELECTED:'NAVIGATIONS_SELECTED'
+
+export const getGalleryList = (list) =>{
+    return {
+        type: FetchType.GET_GALLERY_LIST,
+        payload: list
+    }
+};
+
+export const FetchType = {
+    GET_GALLERY_LIST: 'GET_GALLERY_LIST'
 };
 

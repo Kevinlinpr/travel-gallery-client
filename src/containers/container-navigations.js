@@ -35,9 +35,6 @@ class Navigations extends React.Component {
             )
         })
     }
-    navigate(){
-            console.log(this.props.navigationSelected.content)
-    }
     render() {
         const { classes } = this.props;
         const fullList = (
@@ -85,7 +82,6 @@ function mapStateToProps(state) {
     return{
         navigations: state.navigations,
         menuActive: state.menuActive,
-        navigationSelected: state.navigationSelected
     }
 }
 function matchDispatchToProps(dispatch) {
