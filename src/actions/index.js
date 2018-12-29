@@ -18,17 +18,19 @@ export const MenuType = {
     CLOSE_MENU:'CLOSE_MENU'
 };
 
-export const openDestroyer = () => {
+export const openDestroyer = (info) => {
       return {
           type: DestroyerType.OPEN_DESTROYER,
-          payload: true
+          payload: true,
+          info: info
       }
 };
 
 export const closeDestroyer = () => {
       return {
           type: DestroyerType.CLOSE_DESTROYER,
-          payload: false
+          payload: false,
+          info: {}
       }
 };
 
@@ -48,7 +50,6 @@ export const getGalleryList = (list) =>{
         payload: list
     }
 };
-
 export const FetchType = {
     GET_GALLERY_LIST: 'GET_GALLERY_LIST'
 };

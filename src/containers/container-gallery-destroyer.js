@@ -7,7 +7,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import {bindActionCreators} from "redux";
-import {openDestroyer, closeDestroyer} from "../actions";
+import {openDestroyer, closeDestroyer, getGalleryList} from "../actions";
 import {connect} from "react-redux";
 
 function Transition(props) {
@@ -15,18 +15,22 @@ function Transition(props) {
 }
 
 class GalleryDestroyer extends React.Component {
-    state = {
-        open: false,
+    deleteGalleryListItem = (info) => {
+        fetch('http://127.0.0.1:3750/delete',{
+            method:'POST',
+            body:JSON.stringify(info),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        }).then(res => {return res.json()})
+            .then(res => {
+                fetch('http://127.0.0.1:3750/list/gallery')
+                    .then(res => {return res.json()})
+                    .then(res => {
+                        this.props.getGalleryList(res);
+                    });
+            });
     };
-
-    handleClickOpen = () => {
-        this.setState({ open: true });
-    };
-
-    handleClose = () => {
-        this.setState({ open: false });
-    };
-
     render() {
         return (
             <div>
@@ -42,20 +46,24 @@ class GalleryDestroyer extends React.Component {
                             aria-describedby="alert-dialog-slide-description"
                         >
                             <DialogTitle id="alert-dialog-slide-title">
-                                {"Use Google's location service?"}
+                                {"是否删除此线路?"}
                             </DialogTitle>
                             <DialogContent>
                                 <DialogContentText id="alert-dialog-slide-description">
-                                    Let Google help apps determine location. This means sending anonymous location data to
-                                    Google, even when no apps are running.
+                                    路线名：{this.props.galleryDestroyActive.deleteObj.name}<br/>
+                                    创建时间：{this.props.galleryDestroyActive.deleteObj.time}<br/>
+                                    请再次确认将要删除路线的信息，此操作不可逆！
                                 </DialogContentText>
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={()=>{this.props.closeDestroyer()}} color="primary">
-                                    Disagree
+                                    否
                                 </Button>
-                                <Button onClick={()=>{this.props.closeDestroyer()}} color="primary">
-                                    Agree
+                                <Button onClick={()=>{
+                                    this.deleteGalleryListItem(this.props.galleryDestroyActive.deleteObj);
+                                    this.props.closeDestroyer();
+                                }} color="primary">
+                                    是
                                 </Button>
                             </DialogActions>
                         </Dialog>
@@ -71,6 +79,6 @@ function mapStateToProps(state) {
     }
 }
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({openDestroyer: openDestroyer,closeDestroyer:closeDestroyer},dispatch);
+    return bindActionCreators({openDestroyer: openDestroyer,closeDestroyer:closeDestroyer,getGalleryList: getGalleryList},dispatch);
 }
 export default connect(mapStateToProps,matchDispatchToProps)(GalleryDestroyer);

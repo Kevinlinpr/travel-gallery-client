@@ -30,9 +30,6 @@ class GalleryList extends Component {
     state = {
         selectedIndex: 0,
     };
-    getDeleteInfo = (index) => {
-        console.log(this.props.galleryList.list[index])
-    };
     handleListItemClick = (event, index) => {
         this.setState({ selectedIndex: index });
     };
@@ -42,7 +39,7 @@ class GalleryList extends Component {
             <List className={classes.root}>
                 {
                     this.props.galleryList.list.length===0?
-                        <h3>暂时无数据</h3>:
+                        <h4>暂时无数据</h4>:
                         <div>
                             {
                                 this.props.galleryList.list.map((item,index)=>{
@@ -52,7 +49,7 @@ class GalleryList extends Component {
                                                   disableTouchRipple={true}
                                                   key={index}
                                         >
-                                            <ListItemText primary={item.newName} secondary={item.time} />
+                                            <ListItemText primary={item.name} secondary={item.time} />
                                             {
                                                 this.state.selectedIndex === index?
                                                     <div>
@@ -61,8 +58,7 @@ class GalleryList extends Component {
                                                         </IconButton>
                                                         <IconButton aria-label="Delete" className={classes.button} color={'primary'}
                                                             onClick={()=>{
-                                                                this.props.openDestroyer();
-                                                                this.getDeleteInfo(this.state.selectedIndex)}}
+                                                                this.props.openDestroyer(item)}}
                                                         >
                                                             <DeleteOutlinedIcon />
                                                         </IconButton>
@@ -80,7 +76,7 @@ class GalleryList extends Component {
 }
 function mapStateToProps(state) {
     return{
-        galleryList:state.galleryList
+        galleryList:state.galleryList,
     }
 }
 function matchDispatchToProps(dispatch) {
