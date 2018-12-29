@@ -7,7 +7,7 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import OpenOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import {bindActionCreators} from "redux";
-import {getGalleryList} from "../actions";
+import {getGalleryList, openDestroyer} from "../actions";
 import {connect} from "react-redux";
 const styles = theme => ({
     root: {
@@ -30,7 +30,9 @@ class GalleryList extends Component {
     state = {
         selectedIndex: 0,
     };
-
+    getDeleteInfo = (index) => {
+        console.log(this.props.galleryList.list[index])
+    };
     handleListItemClick = (event, index) => {
         this.setState({ selectedIndex: index });
     };
@@ -57,7 +59,11 @@ class GalleryList extends Component {
                                                         <IconButton aria-label="Search" className={classes.button} color={'primary'}>
                                                             <OpenOutlinedIcon />
                                                         </IconButton>
-                                                        <IconButton aria-label="Delete" className={classes.button} color={'primary'}>
+                                                        <IconButton aria-label="Delete" className={classes.button} color={'primary'}
+                                                            onClick={()=>{
+                                                                this.props.openDestroyer();
+                                                                this.getDeleteInfo(this.state.selectedIndex)}}
+                                                        >
                                                             <DeleteOutlinedIcon />
                                                         </IconButton>
                                                     </div>:<div></div>
@@ -78,6 +84,6 @@ function mapStateToProps(state) {
     }
 }
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({getGalleryList: getGalleryList},dispatch);
+    return bindActionCreators({openDestroyer: openDestroyer,getGalleryList: getGalleryList},dispatch);
 }
 export default connect(mapStateToProps,matchDispatchToProps)(withStyles(styles)(GalleryList));

@@ -148,6 +148,7 @@ class GalleryCreator extends React.Component {
         );
     }
 }
+
 function matchDispatchToProps(dispatch) {
     return bindActionCreators({getGalleryList: getGalleryList},dispatch);
 }

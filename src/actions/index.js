@@ -18,6 +18,25 @@ export const MenuType = {
     CLOSE_MENU:'CLOSE_MENU'
 };
 
+export const openDestroyer = () => {
+      return {
+          type: DestroyerType.OPEN_DESTROYER,
+          payload: true
+      }
+};
+
+export const closeDestroyer = () => {
+      return {
+          type: DestroyerType.CLOSE_DESTROYER,
+          payload: false
+      }
+};
+
+export const DestroyerType = {
+    OPEN_DESTROYER:'OPEN_DESTROYER',
+    CLOSE_DESTROYER:'CLOSE_DESTROYER'
+};
+
 export const navigationsSelected = (selected) => (dispatch) =>{
     dispatch(push('/'+selected));
 };
