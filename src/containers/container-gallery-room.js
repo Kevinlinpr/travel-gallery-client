@@ -15,7 +15,13 @@ class GalleryManager extends Component{
         const {id} = this.props.match.params;
         console.log(id);
         return(
-            <GalleryLobby/>
+            <div>
+                {
+                    id===undefined?
+                        <div>undefined</div>:<h5>{id}</h5>
+                }
+            </div>
+
         )
     }
 }

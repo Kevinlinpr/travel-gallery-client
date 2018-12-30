@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42a4461a-e879-4cd3-ab7b-b98908d6f2d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Gallery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GalleryOperator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GalleryLobby.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/container-content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/container-content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/container-gallery-creator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/container-gallery-creator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/container-gallery-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/container-gallery-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/container-gallery-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/container-gallery-room.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -36,13 +29,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/container-gallery-manager.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/container-gallery-room.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+            <state relative-caret-position="75">
+              <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/container-content.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#103#141#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/src/reducers/reducer-gallery-operator.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -61,31 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/reducers/reducer-gallery-list.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/container-gallery-destroyer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="80" selection-start-line="80" selection-end-line="82" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/container-gallery-list.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -95,6 +77,30 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
               <caret line="62" column="32" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/GalleryLobby.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/GalleryMap.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,22 +121,9 @@
         <entry file="file://$PROJECT_DIR$/src/containers/container-gallery-creator.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+              <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/container-content.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#103#141#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -203,15 +196,15 @@
         <option value="$PROJECT_DIR$/src/reducers/reducer-gallery-list.js" />
         <option value="$PROJECT_DIR$/src/containers/container-gallery-destroyer.js" />
         <option value="$PROJECT_DIR$/src/containers/container-gallery-creator.js" />
-        <option value="$PROJECT_DIR$/src/components/GalleryLobby.js" />
         <option value="$PROJECT_DIR$/src/components/Gallery.js" />
         <option value="$PROJECT_DIR$/src/reducers/reducer-gallery-operator.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/components/GalleryManager.js" />
-        <option value="$PROJECT_DIR$/src/containers/container-content.js" />
         <option value="$PROJECT_DIR$/src/containers/container-gallery-list.js" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/components/GalleryLobby.js" />
         <option value="$PROJECT_DIR$/src/containers/container-gallery-manager.js" />
+        <option value="$PROJECT_DIR$/src/containers/container-content.js" />
       </list>
     </option>
   </component>
@@ -321,7 +314,7 @@
       <workItem from="1545508701284" duration="8156000" />
       <workItem from="1545614362689" duration="15431000" />
       <workItem from="1545759826827" duration="14873000" />
-      <workItem from="1546013780721" duration="22216000" />
+      <workItem from="1546013780721" duration="25257000" />
     </task>
     <task id="LOCAL-00001" summary="create new branch develop-ui">
       <created>1545059634614</created>
@@ -491,11 +484,25 @@
       <option name="project" value="LOCAL" />
       <updated>1546072913977</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="try adding gallery detail">
+      <created>1546182280609</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1546182280609</updated>
+    </task>
+    <task id="LOCAL-00026" summary="modify the route">
+      <created>1546184664384</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1546184664384</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125426000" />
+    <option name="totallyTimeSpent" value="128467000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -523,9 +530,9 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32882413" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989429" weight="0.5614458" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989429" visible="true" weight="0.20120482" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4982382" visible="true" weight="0.23855421" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4982382" weight="0.23855421" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -545,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create new branch develop-ui" />
     <MESSAGE value="make todo list to retrieve the redux" />
     <MESSAGE value="Add basic components." />
     <MESSAGE value="Add simple router in react." />
@@ -569,7 +575,9 @@
     <MESSAGE value="refresh automatic after adding new gallery" />
     <MESSAGE value="finish logic of deleting the gallery item" />
     <MESSAGE value="finish creating and deleting gallery list item." />
-    <option name="LAST_COMMIT_MESSAGE" value="finish creating and deleting gallery list item." />
+    <MESSAGE value="try adding gallery detail" />
+    <MESSAGE value="modify the route" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify the route" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/components/Footer.js" />
@@ -693,26 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GalleryMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GalleryLobby.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/GalleryManager.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -743,21 +731,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/container-content.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#103#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/container-gallery-list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="38" />
+          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="38" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -777,7 +754,7 @@
     <entry file="file://$PROJECT_DIR$/src/containers/container-gallery-creator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -804,7 +781,7 @@
     <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -814,23 +791,54 @@
     <entry file="file://$PROJECT_DIR$/src/reducers/reducer-gallery-list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/reducer-gallery-operator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/container-gallery-manager.js">
+    <entry file="file://$PROJECT_DIR$/src/components/GalleryMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+        <state relative-caret-position="240">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GalleryLobby.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/container-gallery-room.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/container-content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#103#141#0" expanded="true" />
           </folding>
         </state>
       </provider>

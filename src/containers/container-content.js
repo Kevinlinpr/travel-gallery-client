@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import { Route, Switch } from 'react-router' // react-router v4
 import Home from '../components/Home';
 import About from '../components/About';
-import GalleryManager from "./container-gallery-manager";
+import GalleryRoom from "./container-gallery-room";
 import GalleryLobby from "../components/GalleryLobby";
 
 class Content extends Component{
@@ -10,10 +10,10 @@ class Content extends Component{
 
         return(
             <Switch>
-                <Route exact path={"/"} render={()=><Home/>}/>
-                <Route path={"/gallery"} render={()=><GalleryLobby/>}/>
-                <Route path={"/gallery/:id"} component={GalleryManager}/>
-                <Route path={"/about"} render={()=><About/>}/>
+                <Route exact path={"/"} component={Home}/>
+                <Route path={"/gallery/:id"} component={GalleryRoom}/>
+                <Route path={"/gallery"} component={GalleryLobby}/>
+                <Route path={"/about"} component={About}/>
                 <Route render={() => (<h1>Miss</h1>)} />
             </Switch>
         )
