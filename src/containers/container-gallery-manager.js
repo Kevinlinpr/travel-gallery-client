@@ -4,15 +4,18 @@ import { Route, Switch } from 'react-router' // react-router v4
 import {connect} from "react-redux";
 
 class GalleryManager extends Component{
+    componentDidMount() {
+
+    }
+
     render(){
         console.log("pathname:"+this.props.pathname);
         console.log("search:"+this.props.search);
         console.log("hash:"+this.props.hash);
-        console.log(this.props.galleryList);
+        const {id} = this.props.match.params;
+        console.log(id);
         return(
-            <Switch>
-                <GalleryLobby/>
-            </Switch>
+            <GalleryLobby/>
         )
     }
 }
