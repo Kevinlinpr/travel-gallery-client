@@ -6,8 +6,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import OpenOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
 import {bindActionCreators} from "redux";
-import {getGalleryList, openDestroyer} from "../actions";
+import {closeGalleryBackToLobby, getGalleryList, openDestroyer, openGalleryFromLobby} from "../actions";
 import {connect} from "react-redux";
 const styles = theme => ({
     root: {
@@ -16,6 +17,9 @@ const styles = theme => ({
     },
     button: {
         textAlign:'right'
+    },
+    text:{
+        textAlign: 'center'
     }
 });
 class GalleryList extends Component {
@@ -39,7 +43,9 @@ class GalleryList extends Component {
             <List className={classes.root}>
                 {
                     this.props.galleryList.list.length===0?
-                        <h4>暂时无数据</h4>:
+                        <Typography variant="button" gutterBottom className={classes.text}>
+                            暂无数据
+                        </Typography>:
                         <div>
                             {
                                 this.props.galleryList.list.map((item,index)=>{
@@ -53,12 +59,17 @@ class GalleryList extends Component {
                                             {
                                                 this.state.selectedIndex === index?
                                                     <div>
-                                                        <IconButton aria-label="Search" className={classes.button} color={'primary'}>
+                                                        <IconButton aria-label="Search" className={classes.button} color={'primary'}
+                                                            onClick={()=>{
+                                                                this.props.openGalleryFromLobby(item)
+                                                            }}
+                                                        >
                                                             <OpenOutlinedIcon />
                                                         </IconButton>
                                                         <IconButton aria-label="Delete" className={classes.button} color={'primary'}
                                                             onClick={()=>{
-                                                                this.props.openDestroyer(item)}}
+                                                                this.props.openDestroyer(item)
+                                                            }}
                                                         >
                                                             <DeleteOutlinedIcon />
                                                         </IconButton>
@@ -80,6 +91,6 @@ function mapStateToProps(state) {
     }
 }
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({openDestroyer: openDestroyer,getGalleryList: getGalleryList},dispatch);
+    return bindActionCreators({openDestroyer: openDestroyer,getGalleryList: getGalleryList,openGalleryFromLobby:openGalleryFromLobby,closeGalleryBackToLobby:closeGalleryBackToLobby},dispatch);
 }
 export default connect(mapStateToProps,matchDispatchToProps)(withStyles(styles)(GalleryList));

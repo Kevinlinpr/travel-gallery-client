@@ -38,9 +38,15 @@ class GalleryCreator extends React.Component {
         this.setState({ agree: true });
     };
     handleClose = () => {
+        this.setState({
+            galleryName: ''
+        });
         this.setState({ open: false });
     };
     handleCancel = () => {
+        this.setState({
+            galleryName: ''
+        });
         this.setState({ agree:false});
     };
     handleConfirm = () => {

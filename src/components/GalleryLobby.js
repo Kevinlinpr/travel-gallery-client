@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import GalleryList from '../containers/container-gallery-list';
 import GalleryCreator from '../containers/container-gallery-creator';
 import GalleryDestroyer from '../containers/container-gallery-destroyer';
-class GalleryOperator extends Component{
+class GalleryLobby extends Component{
     render(){
         return(
             <div>
@@ -13,4 +13,4 @@ class GalleryOperator extends Component{
         )
     }
 }
-export default GalleryOperator;
+export default GalleryLobby;
