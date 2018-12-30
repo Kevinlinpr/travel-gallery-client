@@ -26,8 +26,8 @@ class GalleryManager extends Component{
         return(
             <div>
                 <Button variant="outlined" color="primary" className={classes.button} onClick={()=>{
-                    this.props.backToGalleryLobby();
                     this.props.closeGalleryBackToLobby();
+                    this.props.backToGalleryLobby();
 
                 }}
                         disableTouchRipple={true}>
