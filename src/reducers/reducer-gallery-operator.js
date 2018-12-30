@@ -15,6 +15,13 @@ export default function (state={active:false, operatorObj:{}},action) {
                 active:action.payload,
                 operatorObj:action.info
             };
+        case GalleryOperatorType.UPLOAD_GALLERY_INFO:
+            console.log('===upload===');
+            console.log(action.info);
+            return {
+                action:action.payload,
+                operatorObj:action.info
+            };
         default:
             return state
     }
