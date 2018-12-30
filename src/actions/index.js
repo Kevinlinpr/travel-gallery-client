@@ -40,14 +40,16 @@ export const DestroyerType = {
     CLOSE_DESTROYER:'CLOSE_DESTROYER'
 };
 
-export const openGalleryFromLobby = (info) => {
+export const openGalleryFromLobby = (info)  => {
     return {
         type: GalleryOperatorType.OPEN_GALLERY_FROM_LOBBY,
         payload: true,
         info: info
     }
 };
-
+export const fowardToGalleryRoom = (info) => (dispatch) => {
+    dispatch(push('/gallery/'+info._id));
+};
 export const closeGalleryBackToLobby = () => {
     return {
         type: GalleryOperatorType.CLOSE_GALLERY_BACK_TO_LOBBY,
@@ -55,7 +57,9 @@ export const closeGalleryBackToLobby = () => {
         info: {}
     }
 };
-
+export const backToGalleryLobby = () => (dispatch) => {
+    dispatch(push('/gallery'));
+};
 export const GalleryOperatorType = {
     OPEN_GALLERY_FROM_LOBBY: 'OPEN_GALLERY_FROM_LOBBY',
     CLOSE_GALLERY_BACK_TO_LOBBY: 'CLOSE_GALLERY_BACK_TO_LOBBY'

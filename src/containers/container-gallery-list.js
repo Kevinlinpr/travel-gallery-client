@@ -8,7 +8,7 @@ import OpenOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import {bindActionCreators} from "redux";
-import {closeGalleryBackToLobby, getGalleryList, openDestroyer, openGalleryFromLobby} from "../actions";
+import {closeGalleryBackToLobby, getGalleryList, openDestroyer, openGalleryFromLobby,fowardToGalleryRoom,backToGalleryLobby} from "../actions";
 import {connect} from "react-redux";
 const styles = theme => ({
     root: {
@@ -61,7 +61,8 @@ class GalleryList extends Component {
                                                     <div>
                                                         <IconButton aria-label="Search" className={classes.button} color={'primary'}
                                                             onClick={()=>{
-                                                                this.props.openGalleryFromLobby(item)
+                                                                this.props.openGalleryFromLobby(item);
+                                                                this.props.forwardGalleryRoom(item)
                                                             }}
                                                         >
                                                             <OpenOutlinedIcon />
@@ -91,6 +92,9 @@ function mapStateToProps(state) {
     }
 }
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({openDestroyer: openDestroyer,getGalleryList: getGalleryList,openGalleryFromLobby:openGalleryFromLobby,closeGalleryBackToLobby:closeGalleryBackToLobby},dispatch);
+    return bindActionCreators({openDestroyer: openDestroyer,getGalleryList: getGalleryList,
+        openGalleryFromLobby:openGalleryFromLobby,closeGalleryBackToLobby:closeGalleryBackToLobby,
+        forwardGalleryRoom:fowardToGalleryRoom
+    },dispatch);
 }
 export default connect(mapStateToProps,matchDispatchToProps)(withStyles(styles)(GalleryList));
