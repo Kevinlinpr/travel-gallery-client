@@ -50,9 +50,9 @@ export const openGalleryFromLobby = (info)  => {
 export const fowardToGalleryRoom = (info) => (dispatch) => {
     dispatch(push('/gallery/'+info._id));
 };
-export const uploadGalleryInfo = (info) => {
+export const loadGalleryInfo = (info) => {
     return {
-        type: GalleryOperatorType.UPLOAD_GALLERY_INFO,
+        type: GalleryOperatorType.LOAD_GALLERY_INFO,
         payload: true,
         info: info
     }
@@ -70,7 +70,7 @@ export const backToGalleryLobby = () => (dispatch) => {
 export const GalleryOperatorType = {
     OPEN_GALLERY_FROM_LOBBY: 'OPEN_GALLERY_FROM_LOBBY',
     CLOSE_GALLERY_BACK_TO_LOBBY: 'CLOSE_GALLERY_BACK_TO_LOBBY',
-    UPLOAD_GALLERY_INFO: 'UPLOAD_GALLERY_INFO'
+    LOAD_GALLERY_INFO: 'LOAD_GALLERY_INFO'
 };
 export const navigationsSelected = (selected) => (dispatch) =>{
     dispatch(push('/'+selected));

@@ -25,7 +25,6 @@ const styles = {
 class GalleryDetailCard extends Component {
     render(){
         const { classes } = this.props;
-        console.log(this.props.galleryOperator);
         return (
             <div className={classes.card}>
                 <Typography variant="h5" component="h2">
