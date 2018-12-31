@@ -5,6 +5,7 @@ import {withStyles} from "@material-ui/core";
 import {bindActionCreators} from "redux";
 import {backToGalleryLobby, closeGalleryBackToLobby,loadGalleryInfo} from "../actions";
 import GalleryDetailCard from './container-gallery-detail-card';
+import GalleryRoomPhotosViewer from './container-gallery-room-photos-viewer';
 const styles = theme => ({
     button: {
         width: '100%',
@@ -47,6 +48,7 @@ class GalleryManager extends Component{
                     返回
                 </Button>
                 <GalleryDetailCard/>
+                <GalleryRoomPhotosViewer/>
             </div>
         )
     }

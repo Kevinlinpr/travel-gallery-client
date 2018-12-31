@@ -39,7 +39,7 @@ class GalleryMap extends Component{
     }
 
     render() {
-        return <div style={{width: '100%', height: 300}}>
+        return <div style={{width: '100%', height: 200}}>
             <Map plugins={['ToolBar']} center={this.mapCenter} zoom={4}
                 amapkey={YOUR_AMAP_KEY}
             >
