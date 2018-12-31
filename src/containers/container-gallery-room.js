@@ -48,6 +48,11 @@ class GalleryManager extends Component{
                     返回
                 </Button>
                 <GalleryDetailCard/>
+                <Button variant="outlined" color="primary" className={classes.button} onClick={()=>{
+                }}
+                        disableTouchRipple={true}>
+                    上传照片
+                </Button>
                 <GalleryRoomPhotosViewer/>
             </div>
         )
