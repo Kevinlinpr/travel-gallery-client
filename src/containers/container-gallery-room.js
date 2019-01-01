@@ -3,9 +3,10 @@ import {connect} from "react-redux";
 import Button from '@material-ui/core/Button';
 import {withStyles} from "@material-ui/core";
 import {bindActionCreators} from "redux";
-import {backToGalleryLobby, closeGalleryBackToLobby,loadGalleryInfo} from "../actions";
+import {backToGalleryLobby, closeGalleryBackToLobby,loadGalleryInfo,openUploader} from "../actions";
 import GalleryDetailCard from './container-gallery-detail-card';
 import GalleryRoomPhotosViewer from './container-gallery-room-photos-viewer';
+import GalleryRoomUploader from './container-gallery-room-uploader';
 const styles = theme => ({
     button: {
         width: '100%',
@@ -49,11 +50,13 @@ class GalleryManager extends Component{
                 </Button>
                 <GalleryDetailCard/>
                 <Button variant="outlined" color="primary" className={classes.button} onClick={()=>{
+                    this.props.openUploader();
                 }}
                         disableTouchRipple={true}>
                     上传照片
                 </Button>
                 <GalleryRoomPhotosViewer/>
+                <GalleryRoomUploader/>
             </div>
         )
     }
@@ -68,6 +71,7 @@ function mapStateToProps(state) {
     }
 }
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({closeGalleryBackToLobby:closeGalleryBackToLobby,backToGalleryLobby:backToGalleryLobby,loadGalleryInfo:loadGalleryInfo},dispatch);
+    return bindActionCreators({closeGalleryBackToLobby:closeGalleryBackToLobby,
+        backToGalleryLobby:backToGalleryLobby,loadGalleryInfo:loadGalleryInfo,openUploader:openUploader},dispatch);
 }
 export default connect(mapStateToProps,matchDispatchToProps)(withStyles(styles)(GalleryManager));

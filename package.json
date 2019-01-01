@@ -8,6 +8,8 @@
     "@material-ui/lab": "^3.0.0-alpha.26",
     "connected-react-router": "^6.0.0",
     "filepond": "^3.7.2",
+    "filepond-plugin-image-exif-orientation": "^1.0.3",
+    "filepond-plugin-image-preview": "^3.1.6",
     "history": "^4.7.2",
     "react": "^16.6.3",
     "react-amap": "^1.2.7",

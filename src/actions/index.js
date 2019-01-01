@@ -34,10 +34,28 @@ export const closeDestroyer = () => {
       }
 };
 
-
 export const DestroyerType = {
     OPEN_DESTROYER:'OPEN_DESTROYER',
     CLOSE_DESTROYER:'CLOSE_DESTROYER'
+};
+
+export const openUploader = () => {
+    return {
+        type: UploaderType.OPEN_UPLOADER,
+        payload: true
+    }
+};
+
+export const closeUploader = () => {
+    return {
+        type: UploaderType.CLOSE_UPLOADER,
+        payload: false
+    }
+};
+
+export const UploaderType = {
+    OPEN_UPLOADER:'OPEN_UPLOADER',
+    CLOSE_UPLOADER:'CLOSE_UPLOADER'
 };
 
 export const openGalleryFromLobby = (info)  => {
