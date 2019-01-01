@@ -20,11 +20,16 @@ import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 // Register the plugins
 //registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 import {connect} from "react-redux";
+import {withStyles} from "@material-ui/core";
 
 function Transition(props) {
     return <Slide direction="up" {...props} />;
 }
-
+const styles  = ({
+    uploader:{
+        minWidth:400
+    }
+});
 class GalleryRoomUploader extends React.Component {
     constructor(props) {
         super(props);
@@ -38,6 +43,7 @@ class GalleryRoomUploader extends React.Component {
         console.log('FilePond instance has initialised', this.pond);
     }
     render() {
+        const {classes} = this.props;
         return (
             <div>
                 {
@@ -50,31 +56,33 @@ class GalleryRoomUploader extends React.Component {
                                 onClose={()=>{this.props.closeUploader()}}
                                 aria-labelledby="alert-dialog-slide-title"
                                 aria-describedby="alert-dialog-slide-description"
+                                maxWidth={"xl"}
                             >
                                 <DialogTitle id="alert-dialog-slide-title">
                                     {"上传照片"}
                                 </DialogTitle>
                                 <DialogContent>
                                     <DialogContentText id="alert-dialog-slide-description">
-                                        {/*<FilePond ref={ref => this.pond = ref}*/}
-                                                  {/*allowMultiple={true}*/}
-                                                  {/*maxFiles={3}*/}
-                                                  {/*server="/api"*/}
-                                                  {/*oninit={() => this.handleInit() }*/}
-                                                  {/*onupdatefiles={(fileItems) => {*/}
-                                                      {/*// Set current file objects to this.state*/}
-                                                      {/*this.setState({*/}
-                                                          {/*files: fileItems.map(fileItem => fileItem.file)*/}
-                                                      {/*});*/}
-                                                  {/*}}>*/}
-
-                                            {/*/!* Update current files  *!/*/}
-                                            {/*{this.state.files.map(file => (*/}
-                                                {/*<File key={file} src={file} origin="local" />*/}
-                                            {/*))}*/}
-
-                                        {/*</FilePond>*/}
+                                        点击或拖拽上传照片自动生成画廊！
                                     </DialogContentText>
+                                    <FilePond ref={ref => this.pond = ref}
+                                              allowMultiple={true}
+                                              maxFiles={3}
+                                              server="/api"
+                                              oninit={() => this.handleInit() }
+                                              onupdatefiles={(fileItems) => {
+                                                  // Set current file objects to this.state
+                                                  this.setState({
+                                                      files: fileItems.map(fileItem => fileItem.file)
+                                                  });
+                                              }}>
+
+                                        {/* Update current files  */}
+                                        {this.state.files.map(file => (
+                                            <File key={file} src={file} origin="local" />
+                                        ))}
+
+                                    </FilePond>
                                 </DialogContent>
                             </Dialog>
                         </div>:<div></div>
@@ -91,4 +99,4 @@ function mapStateToProps(state) {
 function matchDispatchToProps(dispatch) {
     return bindActionCreators({openUploader: openUploader,closeUploader:closeUploader},dispatch);
 }
-export default connect(mapStateToProps,matchDispatchToProps)(GalleryRoomUploader);
+export default connect(mapStateToProps,matchDispatchToProps)(withStyles(styles)(GalleryRoomUploader));
