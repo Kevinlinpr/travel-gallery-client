@@ -25,11 +25,6 @@ import {withStyles} from "@material-ui/core";
 function Transition(props) {
     return <Slide direction="up" {...props} />;
 }
-const styles  = ({
-    uploader:{
-        minWidth:400
-    }
-});
 class GalleryRoomUploader extends React.Component {
     constructor(props) {
         super(props);
@@ -43,7 +38,6 @@ class GalleryRoomUploader extends React.Component {
         console.log('FilePond instance has initialised', this.pond);
     }
     render() {
-        const {classes} = this.props;
         return (
             <div>
                 {
@@ -67,21 +61,9 @@ class GalleryRoomUploader extends React.Component {
                                     </DialogContentText>
                                     <FilePond ref={ref => this.pond = ref}
                                               allowMultiple={true}
-                                              maxFiles={3}
-                                              server="/api"
-                                              oninit={() => this.handleInit() }
-                                              onupdatefiles={(fileItems) => {
-                                                  // Set current file objects to this.state
-                                                  this.setState({
-                                                      files: fileItems.map(fileItem => fileItem.file)
-                                                  });
-                                              }}>
-
-                                        {/* Update current files  */}
-                                        {this.state.files.map(file => (
-                                            <File key={file} src={file} origin="local" />
-                                        ))}
-
+                                              maxFiles={9}
+                                              server={'http://149.28.202.19:3750/upload'}
+                                    >
                                     </FilePond>
                                 </DialogContent>
                             </Dialog>
@@ -99,4 +81,4 @@ function mapStateToProps(state) {
 function matchDispatchToProps(dispatch) {
     return bindActionCreators({openUploader: openUploader,closeUploader:closeUploader},dispatch);
 }
-export default connect(mapStateToProps,matchDispatchToProps)(withStyles(styles)(GalleryRoomUploader));
+export default connect(mapStateToProps,matchDispatchToProps)(GalleryRoomUploader);

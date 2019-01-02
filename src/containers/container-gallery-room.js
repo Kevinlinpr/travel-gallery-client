@@ -49,12 +49,16 @@ class GalleryManager extends Component{
                     返回
                 </Button>
                 <GalleryDetailCard/>
-                <Button variant="outlined" color="primary" className={classes.button} onClick={()=>{
-                    this.props.openUploader();
-                }}
-                        disableTouchRipple={true}>
-                    上传照片
-                </Button>
+                {
+                    this.props.galleryRoomUploaderActiveReducer.active?
+                        <div></div>:
+                        <Button variant="outlined" color="primary" className={classes.button} onClick={()=>{
+                            this.props.openUploader();
+                        }}
+                                disableTouchRipple={true}>
+                            上传照片
+                        </Button>
+                }
                 <GalleryRoomPhotosViewer/>
                 <GalleryRoomUploader/>
             </div>
@@ -67,7 +71,8 @@ function mapStateToProps(state) {
         search: state.router.location.search,
         hash: state.router.location.hash,
         galleryOperator: state.galleryOperator,
-        galleryList:state.galleryList
+        galleryList:state.galleryList,
+        galleryRoomUploaderActiveReducer: state.galleryRoomUploaderActiveReducer
     }
 }
 function matchDispatchToProps(dispatch) {
