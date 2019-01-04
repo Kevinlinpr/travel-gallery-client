@@ -25,7 +25,7 @@ const styles = theme => ({
 class GalleryList extends Component {
     constructor(props){
         super(props);
-        fetch('http://127.0.0.1:3750/list/gallery')
+        fetch('http://149.28.202.19:3750/list/gallery')
             .then(res => {return res.json()})
             .then(res => {
                 this.props.getGalleryList(res);

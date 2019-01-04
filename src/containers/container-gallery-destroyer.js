@@ -16,7 +16,7 @@ function Transition(props) {
 
 class GalleryDestroyer extends React.Component {
     deleteGalleryListItem = (info) => {
-        fetch('http://127.0.0.1:3750/delete',{
+        fetch('http://149.28.202.19:3750/delete',{
             method:'POST',
             body:JSON.stringify(info),
             headers: new Headers({
@@ -24,7 +24,7 @@ class GalleryDestroyer extends React.Component {
             })
         }).then(res => {return res.json()})
             .then(res => {
-                fetch('http://127.0.0.1:3750/list/gallery')
+                fetch('http://149.28.202.19:3750/list/gallery')
                     .then(res => {return res.json()})
                     .then(res => {
                         this.props.getGalleryList(res);

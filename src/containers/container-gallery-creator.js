@@ -50,7 +50,7 @@ class GalleryCreator extends React.Component {
         this.setState({ agree:false});
     };
     handleConfirm = () => {
-        fetch('http://127.0.0.1:3750/create',{
+        fetch('http://149.28.202.19:3750/create',{
             method:'POST',
             body:JSON.stringify({
                 name: this.state.galleryName
@@ -60,7 +60,7 @@ class GalleryCreator extends React.Component {
             })
         }).then(res => {return res.json()})
             .then(res => {
-                fetch('http://127.0.0.1:3750/list/gallery')
+                fetch('http://149.28.202.19:3750/list/gallery')
                     .then(res => {return res.json()})
                     .then(res => {
                         this.props.getGalleryList(res);

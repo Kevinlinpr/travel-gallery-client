@@ -20,7 +20,7 @@ class GalleryManager extends Component{
     constructor(props){
         super(props);
         const {id} = this.props.match.params;
-        fetch('http://127.0.0.1:3750/gallery/room/info',{
+        fetch('http://149.28.202.19:3750/gallery/room/info',{
             method:'POST',
             body:JSON.stringify({
                 _id:id
