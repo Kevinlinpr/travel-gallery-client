@@ -32,7 +32,9 @@ class GalleryManager extends Component{
             .then(res => {
                 this.props.loadGalleryInfo(res[0]);
             });
+
     }
+
 
     render(){
         // console.log("pathname:"+this.props.pathname);

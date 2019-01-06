@@ -17,7 +17,7 @@ export default function (state={active:false, operatorObj:{}},action) {
             console.log('===load===');
             console.log(action);
             return {
-                action:action.payload,
+                active:action.payload,
                 operatorObj:action.info
             };
         default:

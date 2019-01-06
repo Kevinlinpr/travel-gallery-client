@@ -14,7 +14,16 @@ import {connect} from "react-redux";
 function Transition(props) {
     return <Slide direction="up" {...props} />;
 }
+let galleryId;
 class GalleryRoomUploader extends React.Component {
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(typeof this.props.galleryOperator != 'undefined' && this.props.galleryOperator.active){
+            galleryId = this.props.galleryOperator.operatorObj._id;
+            console.log(galleryId);
+        }
+    }
+
     render() {
         const serverConfig = {
             process: {
@@ -22,7 +31,46 @@ class GalleryRoomUploader extends React.Component {
                 method: 'POST',
                 withCredentials: false,
                 onload: (res)=>{
-                    console.log(JSON.parse(res));
+                    let response = JSON.parse(res);
+                    console.log(response);
+                    let info = {};
+                    if(navigator.geolocation){
+                        navigator.geolocation.getCurrentPosition(function (position) {
+                                console.log('yes');
+                                let longitude = position.coords.longitude;
+                                let latitude = position.coords.latitude;
+                                console.log(longitude);
+                                console.log(latitude);
+                                // info = {
+                                //     _id:galleryId,
+                                //     imgUrl:response.imgUrl,
+                                //     longitude:longitude,
+                                //     latitude:latitude
+                                // };
+                                // console.log(info);
+                                // fetch('http://149.28.202.19:3750/uploadImgInfo',{
+                                //     method:'POST',
+                                //     body:JSON.stringify(info),
+                                //     headers: new Headers({
+                                //         'Content-Type': 'application/json'
+                                //     })
+                                // }).then(res => {return res.json()})
+                                //     .then(res => {
+                                //         console.log(res)
+                                //     });
+                            },
+                            function (e) {
+                                let msg = e.code;
+                                let dd = e.message;
+                                console.log(msg);
+                                console.log(dd)
+                            },{
+                                enableHighAccuracy: true,
+                                timeout: 1000,
+                                maximumAge:60*1000
+                            })
+                    }
+
                 },
             }
         };
@@ -67,7 +115,8 @@ class GalleryRoomUploader extends React.Component {
 
 function mapStateToProps(state) {
     return{
-        galleryRoomUploaderActiveReducer: state.galleryRoomUploaderActiveReducer
+        galleryRoomUploaderActiveReducer: state.galleryRoomUploaderActiveReducer,
+        galleryOperator: state.galleryOperator
     }
 }
 function matchDispatchToProps(dispatch) {
