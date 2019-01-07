@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42a4461a-e879-4cd3-ab7b-b98908d6f2d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/container-gallery-room-uploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/container-gallery-room-uploader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/container-gallery-room.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/container-gallery-room.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/reducer-gallery-operator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/reducer-gallery-operator.js" afterDir="false" />
-    </list>
+    <list default="true" id="42a4461a-e879-4cd3-ab7b-b98908d6f2d3" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -318,7 +312,7 @@
       <workItem from="1545614362689" duration="15431000" />
       <workItem from="1545759826827" duration="14873000" />
       <workItem from="1546013780721" duration="52635000" />
-      <workItem from="1546711468954" duration="12983000" />
+      <workItem from="1546711468954" duration="13335000" />
     </task>
     <task id="LOCAL-00001" summary="create new branch develop-ui">
       <created>1545059634614</created>
@@ -600,11 +594,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546742640489</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="test on server">
+      <created>1546765350272</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1546765350273</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168828000" />
+    <option name="totallyTimeSpent" value="169180000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -617,9 +618,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976852" visible="true" weight="0.24594785" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976852" visible="true" weight="0.24594785" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5023148" side_tool="true" weight="0.16227607" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -634,7 +634,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989429" weight="0.23734939" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4982382" visible="true" weight="0.17710844" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4982382" visible="true" weight="0.17710844" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -694,7 +694,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding a gallery operator" />
     <MESSAGE value="fix the GlleryCreator UI error" />
     <MESSAGE value="require the text creating the new galleryName value" />
     <MESSAGE value="add disabled control" />
@@ -719,7 +718,8 @@
     <MESSAGE value="wait for adding photos" />
     <MESSAGE value="test upload file" />
     <MESSAGE value="successfully get response from server after uploading file" />
-    <option name="LAST_COMMIT_MESSAGE" value="successfully get response from server after uploading file" />
+    <MESSAGE value="test on server" />
+    <option name="LAST_COMMIT_MESSAGE" value="test on server" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/components/Drawer.js" />
